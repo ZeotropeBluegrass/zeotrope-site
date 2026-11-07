@@ -19,15 +19,29 @@
   // Opened straight from disk (file://) there is no web server to pick the index file, so use index.html there.
   var homePath = location.protocol === 'file:' ? 'index.html' : '';
 
+  // Clean addresses: pages are linked as /tour, /bio, /gallery (no ".html").
+  // Opened straight from disk (file://) there is no web server to add the extension, so add it there.
+  var pageExt = location.protocol === 'file:' ? '.html' : '';
+  if (pageExt) {
+    document.addEventListener('DOMContentLoaded', function () {
+      Array.prototype.forEach.call(document.querySelectorAll('a[data-page]'), function (a) {
+        a.setAttribute('href', a.getAttribute('href') + '.html');
+      });
+    });
+  } else if (/\.html$/.test(location.pathname)) {
+    // Someone landed on /tour.html: quietly show /tour instead.
+    history.replaceState(null, '', location.pathname.replace(/\.html$/, '') + location.search + location.hash);
+  }
+
   var NAV_LINKS = [
     { label: 'Home', path: homePath },
-    { label: 'Tour', path: 'pages/tour.html' },
-    { label: 'Bio',  path: 'pages/about.html' },
-    { label: 'Gallery', path: 'pages/gallery.html' }
+    { label: 'Tour', path: 'tour' + pageExt },
+    { label: 'Bio',  path: 'bio' + pageExt },
+    { label: 'Gallery', path: 'gallery' + pageExt }
     // Contact info (booking email + social links) lives in the footer (see FOOTER below), not the menu.
-    // EPK is intentionally unlisted. It lives at /epk/ (epk/index.html); share that URL directly.
-    // { label: 'EPK', path: 'epk/index.html' },
-    // { label: 'Media', path: 'pages/media.html' }
+    // EPK is intentionally unlisted. It lives at /epk (epk.html); share that URL directly.
+    // { label: 'EPK', path: 'epk' + pageExt },
+    // { label: 'Media', path: 'media' + pageExt }
   ];
 
   // Treat "/", "/index", "/index.html" (and "/tour" vs "/tour.html") as the same page.

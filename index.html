@@ -22,12 +22,12 @@
       history.replaceState(null, '', location.pathname.replace(/index\.html$/, '') + location.search + location.hash);
     }
   </script>
-  <link rel="stylesheet" href="css/site.css?v=13">
-  <link rel="stylesheet" href="css/home.css?v=13">
+  <link rel="stylesheet" href="css/site.css?v=14">
+  <link rel="stylesheet" href="css/home.css?v=14">
 </head>
 <body class="home">
   <!-- Shared header + nav (edit js/nav.js to change it everywhere) -->
-  <script src="js/nav.js?v=13"></script>
+  <script src="js/nav.js?v=14"></script>
 
   <main class="home-main">
     <img class="home-logo" src="assets/icons/zeotrope-logo-home.svg" width="340" height="297" alt="Zeotrope">
@@ -44,9 +44,9 @@
 
     <!-- Main Buttons -->
     <div class="main-buttons">
-      <a href="pages/tour.html" class="btn">Tour</a>
-      <a href="pages/about.html" class="btn">Bio</a>
-      <a href="pages/gallery.html" class="btn">Gallery</a>
+      <a href="tour" data-page class="btn">Tour</a>
+      <a href="bio" data-page class="btn">Bio</a>
+      <a href="gallery" data-page class="btn">Gallery</a>
     </div>
   </main>
 </body>

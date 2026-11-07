@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour | Zeotrope</title>
+  <meta name="description" content="Upcoming and past shows from Zeotrope, a Cincinnati progressive bluegrass band.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Zeotrope">
+  <meta property="og:title" content="Tour | Zeotrope">
+  <meta property="og:description" content="Upcoming and past shows from Zeotrope, a Cincinnati progressive bluegrass band.">
+  <meta property="og:url" content="https://zeotropebluegrass.com/tour">
+  <meta property="og:image" content="https://zeotropebluegrass.com/assets/images/og-logo.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Zeotrope logo: carousel horses above the band name">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://zeotropebluegrass.com/tour">
+  <link rel="stylesheet" href="css/site.css?v=14">
+  <link rel="stylesheet" href="css/tour.css?v=14">
+</head>
+<body class="page">
+  <!-- Shared header + nav (edit js/nav.js to change it everywhere) -->
+  <script src="js/nav.js?v=14"></script>
+
+  <!-- Tour Container -->
+  <div class="tour-container">
+    <!-- Logo Header -->
+    <div class="logo-header">
+      <img
+        src="assets/images/tour-dates-logo.svg"
+        alt="Zeotrope Tour Dates"
+        class="page-logo"
+        id="pageLogo"
+      />
+    </div>
+
+    <!--
+      Shows are NOT typed in here. They come from data/shows.csv and js/tour.js
+      sorts them into Upcoming / Residency / Past using today's date.
+      To add or change a show, edit data/shows.csv (see data/README.md).
+    -->
+    <div class="tour-box">
+      <!-- Upcoming Shows -->
+      <section class="future-tours">
+        <img src="assets/images/upcoming-shows.svg" alt="Upcoming Shows" class="section-header">
+        <div id="upcoming-list" aria-live="polite">
+          <p class="tour-empty">Loading shows&hellip;</p>
+        </div>
+      </section>
+
+      <!-- Residency Section (hidden automatically when the CSV has no residencies) -->
+      <section class="residency-tours" id="residency-section" hidden>
+        <img src="assets/images/residency.svg" alt="Residency" class="section-header">
+        <div id="residency-list"></div>
+      </section>
+
+      <!-- Past Shows (hidden automatically when there are none) -->
+      <section class="past-tours" id="past-section" hidden>
+        <img src="assets/images/past-shows.svg" alt="Past Shows" class="section-header">
+        <div id="past-list"></div>
+      </section>
+    </div>
+  </div>
+
+  <script src="js/tour.js"></script>
+</body>
+</html>
