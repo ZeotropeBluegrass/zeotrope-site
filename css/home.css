@@ -60,6 +60,7 @@ body.home::after {
 
 .btn:hover {
   background-color: #aa2222;
+  color: #fff; /* white on dark red passes contrast; black did not */
   transform: scale(1.1);
 }
 
