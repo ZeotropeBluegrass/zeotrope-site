@@ -10,29 +10,28 @@
   <meta property="og:title" content="Tour | Zeotrope">
   <meta property="og:description" content="Upcoming and past shows from Zeotrope, a Cincinnati progressive bluegrass band.">
   <meta property="og:url" content="https://zeotropebluegrass.com/tour">
-  <meta property="og:image" content="https://zeotropebluegrass.com/assets/images/og-logo.jpg">
+  <meta property="og:image" content="https://zeotropebluegrass.com/assets/brand/og-logo.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Zeotrope logo: carousel horses above the band name">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://zeotropebluegrass.com/tour">
-  <link rel="stylesheet" href="css/site.css?v=14">
-  <link rel="stylesheet" href="css/tour.css?v=14">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicons/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/favicons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/tour.css">
 </head>
 <body class="page">
   <!-- Shared header + nav (edit js/nav.js to change it everywhere) -->
-  <script src="js/nav.js?v=14"></script>
+  <script src="js/nav.js"></script>
 
   <!-- Tour Container -->
   <div class="tour-container">
-    <!-- Logo Header -->
+    <!-- Logo Header (the <h1> is for screen readers; the picture is decorative) -->
     <div class="logo-header">
-      <img
-        src="assets/images/tour-dates-logo.svg"
-        alt="Zeotrope Tour Dates"
-        class="page-logo"
-        id="pageLogo"
-      />
+      <h1 class="visually-hidden">Zeotrope Tour Dates</h1>
+      <img src="assets/brand/title-tour-dates.svg" alt="">
     </div>
 
     <!--
@@ -43,7 +42,7 @@
     <div class="tour-box">
       <!-- Upcoming Shows -->
       <section class="future-tours">
-        <img src="assets/images/upcoming-shows.svg" alt="Upcoming Shows" class="section-header">
+        <img src="assets/brand/title-upcoming-shows.svg" alt="Upcoming Shows" class="section-header">
         <div id="upcoming-list" aria-live="polite">
           <p class="tour-empty">Loading shows&hellip;</p>
         </div>
@@ -51,13 +50,13 @@
 
       <!-- Residency Section (hidden automatically when the CSV has no residencies) -->
       <section class="residency-tours" id="residency-section" hidden>
-        <img src="assets/images/residency.svg" alt="Residency" class="section-header">
+        <img src="assets/brand/title-residency.svg" alt="Residency" class="section-header">
         <div id="residency-list"></div>
       </section>
 
       <!-- Past Shows (hidden automatically when there are none) -->
       <section class="past-tours" id="past-section" hidden>
-        <img src="assets/images/past-shows.svg" alt="Past Shows" class="section-header">
+        <img src="assets/brand/title-past-shows.svg" alt="Past Shows" class="section-header">
         <div id="past-list"></div>
       </section>
     </div>

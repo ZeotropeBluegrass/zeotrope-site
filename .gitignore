@@ -10,4 +10,7 @@ Thumbs.db
 desktop.ini
 *.tmp
 *.bak
+__pycache__/
+
+# Private notes
 GITHUB-SETUP.md

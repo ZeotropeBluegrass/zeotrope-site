@@ -17,7 +17,7 @@ body.home::before {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background: url('../assets/images/astrobowl2.jpg') no-repeat center center / cover;
+  background: url('../assets/backgrounds/home-hero.jpg') no-repeat center center / cover;
 }
 
 body.home::after {
@@ -48,7 +48,7 @@ body.home::after {
 }
 
 .btn {
-  background-color: #ffde59;
+  background-color: var(--gold);
   padding: 15px 40px;
   text-decoration: none;
   color: rgb(0, 0, 0);
@@ -59,7 +59,7 @@ body.home::after {
 }
 
 .btn:hover {
-  background-color: #aa2222;
+  background-color: var(--red);
   color: #fff; /* white on dark red passes contrast; black did not */
   transform: scale(1.1);
 }

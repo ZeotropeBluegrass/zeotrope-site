@@ -6,6 +6,8 @@
  *
  * A show flips from Upcoming to Past automatically the day after its date.
  * Nothing here needs editing to add shows -- edit data/shows.csv instead.
+ *
+ * The CSV is fetched, so the page must be served (GitHub Pages, or "python scripts/serve.py" locally).
  */
 (function () {
   'use strict';
@@ -76,7 +78,7 @@
     return real ? date : null;
   }
 
-  // Date -> "Mar 21, 2026"
+  // Date -> "Mar 21, 2026" (days under 10 are zero-padded: "Mar 05, 2026")
   function formatDate(date) {
     var day = String(date.getDate());
     if (day.length < 2) day = '0' + day;
@@ -190,28 +192,10 @@
   }
 
   // ---- Getting the CSV text ----
-  // Online (http/https, e.g. GitHub Pages): read data/shows.csv directly, always fresh.
-  // Double-clicked from disk (file://): browsers refuse to read other local files with fetch(),
-  // so use data/shows.js instead -- a copy of shows.csv made by update-shows.bat.
-  function loadViaFetch(csvUrl) {
+  function loadCsv(csvUrl) {
     return fetch(csvUrl, { cache: 'no-cache' }).then(function (res) {
       if (!res.ok) throw new Error('HTTP ' + res.status + ' for ' + csvUrl);
       return res.text();
-    });
-  }
-
-  function loadViaScript(jsUrl) {
-    return new Promise(function (resolve, reject) {
-      var s = document.createElement('script');
-      s.src = jsUrl;
-      s.onload = function () {
-        if (typeof window.SHOWS_CSV === 'string') resolve(window.SHOWS_CSV);
-        else reject(new Error('data/shows.js loaded but contains no SHOWS_CSV'));
-      };
-      s.onerror = function () {
-        reject(new Error('Could not load ' + jsUrl + ' -- run update-shows.bat to create it'));
-      };
-      document.head.appendChild(s);
     });
   }
 
@@ -220,17 +204,13 @@
     var upcomingList = document.getElementById('upcoming-list');
     if (!upcomingList) return;
 
-    var isLocalFile = location.protocol === 'file:';
-    var source = isLocalFile
-      ? loadViaScript(new URL('../data/shows.js', scriptSrc).href)
-      : loadViaFetch(new URL('../data/shows.csv', scriptSrc).href);
-
-    if (isLocalFile) {
-      console.info('Local preview: showing data/shows.js, which is a copy of data/shows.csv. ' +
-        'After editing the CSV, double-click update-shows.bat and refresh.');
+    // Browsers refuse to fetch() other files when a page is opened by double-clicking it.
+    if (location.protocol === 'file:') {
+      showMessage(upcomingList, 'Preview mode: run "python scripts/serve.py" in the site folder, then open http://localhost:8000.', false);
+      return;
     }
 
-    source
+    loadCsv(new URL('../data/shows.csv', scriptSrc).href)
       .then(function (text) {
         var today = new Date();
         today.setHours(0, 0, 0, 0);
@@ -238,13 +218,7 @@
       })
       .catch(function (err) {
         console.error('Could not load the show dates:', err);
-        showMessage(
-          upcomingList,
-          isLocalFile
-            ? 'Local preview: double-click update-shows.bat in the site folder to build data/shows.js, then refresh.'
-            : 'Show dates could not be loaded right now. Please check back soon.',
-          false
-        );
+        showMessage(upcomingList, 'Show dates could not be loaded right now. Please check back soon.', false);
       });
   }
 
