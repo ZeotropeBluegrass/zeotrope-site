@@ -4,12 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | Zeotrope</title>
-  <link rel="stylesheet" href="css/site.css">
-  <link rel="stylesheet" href="css/home.css">
+  <link rel="canonical" href="https://zeotropebluegrass.com/">
+  <script>
+    // If someone lands on /index.html, quietly show the clean address instead.
+    if (/\/index\.html$/.test(location.pathname) && location.protocol !== 'file:') {
+      history.replaceState(null, '', location.pathname.replace(/index\.html$/, '') + location.search + location.hash);
+    }
+  </script>
+  <link rel="stylesheet" href="css/site.css?v=3">
+  <link rel="stylesheet" href="css/home.css?v=3">
 </head>
 <body class="home">
   <!-- Shared header + nav (edit js/nav.js to change it everywhere) -->
-  <script src="js/nav.js"></script>
+  <script src="js/nav.js?v=3"></script>
 
   <main class="home-main">
     <!-- Band photo shown only on phones (on wide screens the same photo is the page background) -->

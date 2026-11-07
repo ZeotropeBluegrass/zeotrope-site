@@ -35,9 +35,11 @@ body.page::before {
 /* Site Header */
 .site-header {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #000; /* solid, so scrolling content never shows through */
   padding: 30px 0;
-  position: relative; /* scrolls away with the page instead of covering content */
+  position: sticky; /* stays pinned to the top while the page scrolls */
+  top: 0;
+  z-index: 1000;
   border-bottom: 1px solid rgba(255, 222, 89, 0.5);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }

@@ -15,8 +15,12 @@
   // from a local file, a local server, or a GitHub Pages sub-path).
   var root = script.src.replace(/js\/nav\.js(?:\?.*)?$/, '');
 
+  // Home links point at the site root ("/") so the address bar never shows /index.html.
+  // Opened straight from disk (file://) there is no web server to pick the index file, so use index.html there.
+  var homePath = location.protocol === 'file:' ? 'index.html' : '';
+
   var NAV_LINKS = [
-    { label: 'Home', path: 'index.html' },
+    { label: 'Home', path: homePath },
     { label: 'Tour', path: 'pages/tour.html' },
     { label: 'Bio',  path: 'pages/about.html' },
     { label: 'Gallery', path: 'pages/gallery.html' },
@@ -44,7 +48,7 @@
   var html =
     '<header class="site-header">' +
       '<nav class="nav-bar" aria-label="Main">' +
-        '<a href="' + root + 'index.html" class="nav-logo">' +
+        '<a href="' + root + homePath + '" class="nav-logo">' +
           '<img src="' + root + 'assets/images/logo.svg" alt="Zeotrope Logo" class="nav-logo-img">' +
         '</a>' +
         '<ul class="nav-links">' + items + '</ul>' +

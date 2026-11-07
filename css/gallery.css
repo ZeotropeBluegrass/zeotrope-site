@@ -174,7 +174,7 @@ dialog.lightbox .lb-next  { right: 10px; top: 50%; transform: translateY(-50%); 
   color: #ffde59;
   margin: 28px 0 16px;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-  scroll-margin-top: 20px;
+  scroll-margin-top: 140px; /* clears the pinned header after a jump link */
 }
 
 /* Download link shown inside the viewer for press photos */
@@ -208,7 +208,7 @@ dialog.lightbox .lb-download[hidden] {
 
 @media (max-width: 560px) {
   .gallery-heading {
-    scroll-margin-top: 20px;
+    scroll-margin-top: 170px; /* header is taller on phones */
   }
 }
 
