@@ -55,13 +55,20 @@
       '</nav>' +
     '</header>';
 
-  // Favicon (tab icon) on every page that uses this header
+  // Favicon (tab icon) + phone home-screen icon on every page that uses this header
   if (!document.querySelector('link[rel~="icon"]')) {
-    var icon = document.createElement('link');
-    icon.rel = 'icon';
-    icon.type = 'image/svg+xml';
-    icon.href = root + 'favicon.svg';
-    document.head.appendChild(icon);
+    [
+      { rel: 'icon', type: 'image/png', sizes: '32x32', href: 'favicon-32.png' },
+      { rel: 'icon', type: 'image/png', sizes: '192x192', href: 'favicon-192.png' },
+      { rel: 'apple-touch-icon', href: 'apple-touch-icon.png' }
+    ].forEach(function (def) {
+      var link = document.createElement('link');
+      link.rel = def.rel;
+      if (def.type) link.type = def.type;
+      if (def.sizes) link.sizes = def.sizes;
+      link.href = root + def.href;
+      document.head.appendChild(link);
+    });
   }
 
   script.insertAdjacentHTML('afterend', html);
