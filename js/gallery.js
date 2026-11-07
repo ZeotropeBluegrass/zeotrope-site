@@ -27,6 +27,9 @@
 
   var img = dialog.querySelector('img');
   var caption = dialog.querySelector('figcaption');
+  var download = dialog.querySelector('.lb-download');
+  var links = [];   // the set currently open
+  var current = 0;
 
   // Caption text for the viewer: drops the Download link and puts " · " before photo credits
   function captionText(fig) {
@@ -35,9 +38,6 @@
     Array.prototype.forEach.call(c.querySelectorAll('.credit'), function (n) { n.textContent = ' \u00b7 ' + n.textContent; });
     return c.textContent;
   }
-  var download = dialog.querySelector('.lb-download');
-  var links = [];   // the set currently open
-  var current = 0;
 
   function show(index) {
     current = (index + links.length) % links.length;

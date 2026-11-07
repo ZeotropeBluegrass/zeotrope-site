@@ -2,11 +2,8 @@
    Bio page only. Shared header/nav/background are in site.css.
    ========================================================== */
 
-/* About Container */
+/* About Container (width/centering come from site.css) */
 .about-container {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,19 +11,9 @@
   padding-bottom: 100px; /* breathing room at the bottom */
 }
 
-/* Logo Header (currently empty; the text H1 covers it) */
-.logo-header img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 30px;
-  margin-top: 40px;
-}
-
-/* About Box */
+/* About Box (background/rounding come from site.css) */
 .about-box {
-  background-color: #000;
   padding: 40px;
-  border-radius: 10px;
   width: 100%;
   max-height: 80vh;
   overflow-y: auto;
@@ -44,12 +31,12 @@
 }
 
 .about-box::-webkit-scrollbar-thumb {
-  background-color: #ff914d;
+  background-color: var(--orange);
   border-radius: 5px;
 }
 
 .about-box::-webkit-scrollbar-track {
-  background-color: #000;
+  background-color: var(--black);
 }
 
 /* Bio Section */
@@ -60,7 +47,7 @@
 
 .bio h1 {
   font-size: 2rem;
-  color: #ffde59;
+  color: var(--gold);
   margin-bottom: 20px;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);

@@ -10,43 +10,43 @@
   <meta property="og:title" content="Zeotrope">
   <meta property="og:description" content="Zeotrope is a Cincinnati progressive bluegrass band. See upcoming shows, photos and more.">
   <meta property="og:url" content="https://zeotropebluegrass.com/">
-  <meta property="og:image" content="https://zeotropebluegrass.com/assets/images/og-logo.jpg">
+  <meta property="og:image" content="https://zeotropebluegrass.com/assets/brand/og-logo.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Zeotrope logo: carousel horses above the band name">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://zeotropebluegrass.com/">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicons/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/favicons/apple-touch-icon.png">
   <script>
     // If someone lands on /index.html, quietly show the clean address instead.
     if (/\/index\.html$/.test(location.pathname) && location.protocol !== 'file:') {
       history.replaceState(null, '', location.pathname.replace(/index\.html$/, '') + location.search + location.hash);
     }
   </script>
-  <link rel="stylesheet" href="css/site.css?v=14">
-  <link rel="stylesheet" href="css/home.css?v=14">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
 <body class="home">
-  <!-- Shared header + nav (edit js/nav.js to change it everywhere) -->
-  <script src="js/nav.js?v=14"></script>
+  <!-- Shared header, footer and social icons (edit js/nav.js to change them everywhere) -->
+  <script src="js/nav.js"></script>
 
   <main class="home-main">
-    <img class="home-logo" src="assets/icons/zeotrope-logo-home.svg" width="340" height="297" alt="Zeotrope">
+    <h1 class="visually-hidden">Zeotrope: Cincinnati progressive bluegrass</h1>
+    <img class="home-logo" src="assets/brand/logo-home.svg" width="340" height="297" alt="">
 
     <!-- Band photo shown only on phones (on wide screens the same photo is the page background) -->
-    <img class="home-hero" src="assets/images/astrobowl2.jpg" width="1200" height="800" alt="Zeotrope performing: mandolin, fiddle, upright bass and guitar">
+    <img class="home-hero" src="assets/backgrounds/home-hero.jpg" width="1200" height="800" alt="Zeotrope performing: mandolin, fiddle, upright bass and guitar">
 
-    <!-- Social icons, above the main buttons (styles in css/site.css) -->
-    <ul class="social-links social-links--icons">
-      <li><a class="social-btn" href="https://www.facebook.com/p/Zeotrope-61574275161086/" target="_blank" rel="noopener noreferrer"><img src="assets/icons/facebook.png" alt="" height="32" onerror="this.remove()"><span>Facebook</span></a></li>
-      <li><a class="social-btn" href="https://www.instagram.com/zeotropeband/" target="_blank" rel="noopener noreferrer"><img src="assets/icons/instagram.png" alt="" height="32" onerror="this.remove()"><span>Instagram</span></a></li>
-      <li><a class="social-btn" href="https://www.youtube.com/@ZeotropeBluegrass" target="_blank" rel="noopener noreferrer"><img src="assets/icons/youtube.png" alt="" height="32" onerror="this.remove()"><span>YouTube</span></a></li>
-    </ul>
+    <!-- Social icons, filled in by js/nav.js from its SOCIAL_LINKS list -->
+    <ul class="social-links social-links--icons" data-social-links></ul>
 
     <!-- Main Buttons -->
     <div class="main-buttons">
-      <a href="tour" data-page class="btn">Tour</a>
-      <a href="bio" data-page class="btn">Bio</a>
-      <a href="gallery" data-page class="btn">Gallery</a>
+      <a href="tour" class="btn">Tour</a>
+      <a href="bio" class="btn">Bio</a>
+      <a href="gallery" class="btn">Gallery</a>
     </div>
   </main>
 </body>
