@@ -68,10 +68,36 @@ body.home::after {
   outline-offset: 3px;
 }
 
+/* Phone hero photo: hidden on wide screens */
+.home-hero {
+  display: none;
+}
+
 @media (max-width: 600px) {
+  /* A tall, narrow screen would crop the wide photo down to one person.
+     Show the whole photo as a banner under the header instead. */
+  body.home::before {
+    background: none;
+  }
+
+  body.home::after {
+    background: none;
+  }
+
   .home-main {
+    justify-content: flex-start;
     gap: 30px;
-    padding: 30px 20px;
+    padding: 0 20px 30px;
+  }
+
+  .home-hero {
+    display: block;
+    width: calc(100% + 40px); /* edge to edge, past the side padding */
+    max-width: none;
+    height: auto;
+    margin: 0 -20px;
+    -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent);
+    mask-image: linear-gradient(to bottom, #000 70%, transparent);
   }
 
   .btn {
