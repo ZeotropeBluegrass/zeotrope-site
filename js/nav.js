@@ -23,10 +23,10 @@
     { label: 'Home', path: homePath },
     { label: 'Tour', path: 'pages/tour.html' },
     { label: 'Bio',  path: 'pages/about.html' },
-    { label: 'Gallery', path: 'pages/gallery.html' },
+    { label: 'Gallery', path: 'pages/gallery.html' }
+    // Contact lives in the footer (see FOOTER below), not the menu.
     // EPK is intentionally unlisted. It lives at /epk/ (epk/index.html); share that URL directly.
     // { label: 'EPK', path: 'epk/index.html' },
-    { label: 'Contact', path: 'pages/contact.html' }
     // { label: 'Media', path: 'pages/media.html' }
   ];
 
@@ -65,4 +65,23 @@
   }
 
   script.insertAdjacentHTML('afterend', html);
+
+  // FOOTER: added to the end of every page. Edit the links/text here.
+  function addFooter() {
+    var footer = document.createElement('footer');
+    footer.className = 'site-footer';
+    footer.innerHTML =
+      '<p class="footer-links">' +
+        '<a href="' + root + 'pages/contact.html">Contact</a>' +
+        '<span aria-hidden="true"> &middot; </span>' +
+        '<a href="mailto:booking@zeotropebluegrass.com">booking@zeotropebluegrass.com</a>' +
+      '</p>' +
+      '<p class="footer-copy">&copy; ' + new Date().getFullYear() + ' Zeotrope</p>';
+    document.body.appendChild(footer);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', addFooter);
+  } else {
+    addFooter();
+  }
 })();

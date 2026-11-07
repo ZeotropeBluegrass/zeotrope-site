@@ -22,6 +22,12 @@ body.page {
   color: #fff;
   min-height: 100vh;
   min-height: 100dvh;
+  display: flex; /* column layout keeps the footer at the bottom of short pages */
+  flex-direction: column;
+}
+
+body.page > * {
+  flex-shrink: 0;
 }
 
 body.page::before {
@@ -224,4 +230,41 @@ body.page::before {
 .social-btn:focus-visible {
   outline: 3px solid #fff;
   outline-offset: 3px;
+}
+
+/* ---------- Site footer (added by js/nav.js) ---------- */
+.site-footer {
+  margin-top: auto;
+  width: 100%;
+  padding: 22px 20px;
+  background-color: #000;
+  border-top: 1px solid rgba(255, 222, 89, 0.5);
+  text-align: center;
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+.site-footer a {
+  color: #ffde59;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.site-footer a:focus-visible {
+  outline: 2px solid #ffde59;
+  outline-offset: 2px;
+}
+
+.footer-copy {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #bbb;
+}
+
+@media print {
+  .site-footer { display: none; }
 }
