@@ -81,13 +81,14 @@
       '<p class="footer-links">' +
         '<a href="mailto:booking@zeotropebluegrass.com">booking@zeotropebluegrass.com</a>' +
       '</p>' +
-      '<p class="footer-links">' +
-        '<a href="https://www.facebook.com/p/Zeotrope-61574275161086/" target="_blank" rel="noopener noreferrer">Facebook</a>' +
-        '<span aria-hidden="true"> &middot; </span>' +
-        '<a href="https://www.instagram.com/zeotropeband/" target="_blank" rel="noopener noreferrer">Instagram</a>' +
-        '<span aria-hidden="true"> &middot; </span>' +
-        '<a href="https://www.youtube.com/@ZeotropeBluegrass" target="_blank" rel="noopener noreferrer">YouTube</a>' +
-      '</p>' +
+      '<ul class="social-links social-links--icons social-links--small">' +
+        '<li><a class="social-btn" href="https://www.facebook.com/p/Zeotrope-61574275161086/" target="_blank" rel="noopener noreferrer">' +
+          '<img src="' + root + 'assets/icons/facebook.png" alt="" height="24" onerror="this.remove()"><span>Facebook</span></a></li>' +
+        '<li><a class="social-btn" href="https://www.instagram.com/zeotropeband/" target="_blank" rel="noopener noreferrer">' +
+          '<img src="' + root + 'assets/icons/instagram.png" alt="" height="24" onerror="this.remove()"><span>Instagram</span></a></li>' +
+        '<li><a class="social-btn" href="https://www.youtube.com/@ZeotropeBluegrass" target="_blank" rel="noopener noreferrer">' +
+          '<img src="' + root + 'assets/icons/youtube.png" alt="" height="24" onerror="this.remove()"><span>YouTube</span></a></li>' +
+      '</ul>' +
       '<p class="footer-copy">&copy; ' + new Date().getFullYear() + ' Zeotrope</p>';
     document.body.appendChild(footer);
   }

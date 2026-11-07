@@ -11,16 +11,23 @@
       history.replaceState(null, '', location.pathname.replace(/index\.html$/, '') + location.search + location.hash);
     }
   </script>
-  <link rel="stylesheet" href="css/site.css?v=9">
-  <link rel="stylesheet" href="css/home.css?v=9">
+  <link rel="stylesheet" href="css/site.css?v=11">
+  <link rel="stylesheet" href="css/home.css?v=11">
 </head>
 <body class="home">
   <!-- Shared header + nav (edit js/nav.js to change it everywhere) -->
-  <script src="js/nav.js?v=10"></script>
+  <script src="js/nav.js?v=11"></script>
 
   <main class="home-main">
     <!-- Band photo shown only on phones (on wide screens the same photo is the page background) -->
     <img class="home-hero" src="assets/images/astrobowl2.jpg" width="1200" height="800" alt="Zeotrope performing: mandolin, fiddle, upright bass and guitar">
+
+    <!-- Social icons, above the main buttons (styles in css/site.css) -->
+    <ul class="social-links social-links--icons">
+      <li><a class="social-btn" href="https://www.facebook.com/p/Zeotrope-61574275161086/" target="_blank" rel="noopener noreferrer"><img src="assets/icons/facebook.png" alt="" height="32" onerror="this.remove()"><span>Facebook</span></a></li>
+      <li><a class="social-btn" href="https://www.instagram.com/zeotropeband/" target="_blank" rel="noopener noreferrer"><img src="assets/icons/instagram.png" alt="" height="32" onerror="this.remove()"><span>Instagram</span></a></li>
+      <li><a class="social-btn" href="https://www.youtube.com/@ZeotropeBluegrass" target="_blank" rel="noopener noreferrer"><img src="assets/icons/youtube.png" alt="" height="32" onerror="this.remove()"><span>YouTube</span></a></li>
+    </ul>
 
     <!-- Main Buttons -->
     <div class="main-buttons">
@@ -28,13 +35,6 @@
       <a href="pages/about.html" class="btn">Bio</a>
       <a href="pages/gallery.html" class="btn">Gallery</a>
     </div>
-
-    <!-- Social Buttons (styles in css/site.css) -->
-    <ul class="social-links social-links--icons">
-      <li><a class="social-btn" href="https://www.facebook.com/p/Zeotrope-61574275161086/" target="_blank" rel="noopener noreferrer"><img src="assets/icons/facebook.png" alt="" height="32" onerror="this.remove()"><span>Facebook</span></a></li>
-      <li><a class="social-btn" href="https://www.instagram.com/zeotropeband/" target="_blank" rel="noopener noreferrer"><img src="assets/icons/instagram.png" alt="" height="32" onerror="this.remove()"><span>Instagram</span></a></li>
-      <li><a class="social-btn" href="https://www.youtube.com/@ZeotropeBluegrass" target="_blank" rel="noopener noreferrer"><img src="assets/icons/youtube.png" alt="" height="32" onerror="this.remove()"><span>YouTube</span></a></li>
-    </ul>
   </main>
 </body>
 </html>

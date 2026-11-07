@@ -313,3 +313,17 @@ body.page::before {
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+
+/* Smaller icon row (footer) */
+.social-links--small {
+  gap: 14px;
+  margin: 6px 0 10px;
+}
+
+.social-links--small .social-btn img {
+  height: 24px;
+}
+
+.site-footer .social-btn:hover {
+  text-decoration: none;
+}
