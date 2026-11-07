@@ -1,0 +1,81 @@
+/* ==========================================================
+   Home page only. Shared header/nav styles are in site.css.
+   ========================================================== */
+
+body.home {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  color: white;
+}
+
+/* Background photo + dark overlay for contrast, both fixed behind everything */
+body.home::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: url('../assets/images/astrobowl2.jpg') no-repeat center center / cover;
+}
+
+body.home::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Centers the buttons in whatever space is left under the header */
+.home-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 20px;
+}
+
+/* Main Buttons */
+.main-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: min(100%, 260px);
+}
+
+.btn {
+  background-color: #ffde59;
+  padding: 15px 40px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  text-align: center;
+  border-radius: 50px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background-color: #aa2222;
+  transform: scale(1.1);
+}
+
+.btn:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .home-main {
+    gap: 30px;
+    padding: 30px 20px;
+  }
+
+  .btn {
+    font-size: 20px;
+    padding: 13px 32px;
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour | Zeotrope</title>
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="../css/tour.css">
+</head>
+<body class="page">
+  <!-- Shared header + nav (edit js/nav.js to change it everywhere) -->
+  <script src="../js/nav.js"></script>
+
+  <!-- Tour Container -->
+  <div class="tour-container">
+    <!-- Logo Header -->
+    <div class="logo-header">
+      <img
+        src="../assets/images/tour-dates-logo.svg"
+        alt="Zeotrope Tour Dates"
+        class="page-logo"
+        id="pageLogo"
+      />
+    </div>
+
+    <!--
+      Shows are NOT typed in here. They come from data/shows.csv and js/tour.js
+      sorts them into Upcoming / Residency / Past using today's date.
+      To add or change a show, edit data/shows.csv (see data/README.md).
+    -->
+    <div class="tour-box">
+      <!-- Upcoming Shows -->
+      <section class="future-tours">
+        <img src="../assets/images/upcoming-shows.svg" alt="Upcoming Shows" class="section-header">
+        <div id="upcoming-list" aria-live="polite">
+          <p class="tour-empty">Loading shows&hellip;</p>
+        </div>
+      </section>
+
+      <!-- Residency Section (hidden automatically when the CSV has no residencies) -->
+      <section class="residency-tours" id="residency-section" hidden>
+        <img src="../assets/images/residency.svg" alt="Residency" class="section-header">
+        <div id="residency-list"></div>
+      </section>
+
+      <!-- Past Shows (hidden automatically when there are none) -->
+      <section class="past-tours" id="past-section" hidden>
+        <img src="../assets/images/past-shows.svg" alt="Past Shows" class="section-header">
+        <div id="past-list"></div>
+      </section>
+    </div>
+  </div>
+
+  <script src="../js/tour.js"></script>
+</body>
+</html>

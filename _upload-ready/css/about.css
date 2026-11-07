@@ -1,0 +1,94 @@
+/* ==========================================================
+   Bio page only. Shared header/nav/background are in site.css.
+   ========================================================== */
+
+/* About Container */
+.about-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+  padding-bottom: 100px; /* breathing room at the bottom */
+}
+
+/* Logo Header (currently empty; the text H1 covers it) */
+.logo-header img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
+
+/* About Box */
+.about-box {
+  background-color: #000;
+  padding: 40px;
+  border-radius: 10px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+/* Scrollbar styling for about-box */
+.about-box::-webkit-scrollbar {
+  width: 10px;
+}
+
+.about-box::-webkit-scrollbar-thumb {
+  background-color: #ff914d;
+  border-radius: 5px;
+}
+
+.about-box::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+/* Bio Section */
+.bio {
+  max-width: 800px;
+  text-align: left;
+}
+
+.bio h1 {
+  font-size: 2rem;
+  color: #ffde59;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.bio p {
+  line-height: 1.7;
+  color: #ddd;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+}
+
+/* Mobile: let the page scroll normally instead of scrolling inside the box */
+@media (max-width: 700px) {
+  .about-container {
+    min-height: 0;
+    padding-bottom: 30px;
+  }
+
+  .about-box {
+    max-height: none;
+    overflow-y: visible;
+    padding: 20px;
+    margin-top: 24px;
+    margin-bottom: 30px;
+  }
+
+  .bio h1 {
+    font-size: 1.6rem;
+  }
+}

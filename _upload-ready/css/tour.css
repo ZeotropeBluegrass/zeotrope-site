@@ -1,0 +1,174 @@
+/* ==========================================================
+   Tour page only. Shared header/nav/background are in site.css.
+   ========================================================== */
+
+/* Tour Container */
+.tour-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo Header */
+.logo-header img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+/* Section headers as SVGs */
+.section-header {
+  display: block;
+  margin: 0 auto 20px auto;
+  max-width: 400px;
+  width: 80%;
+  height: auto;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.6));
+}
+
+/* Scroll box for tour dates */
+.tour-box {
+  background-color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* Scrollbar styling for tour-box */
+.tour-box::-webkit-scrollbar {
+  width: 10px;
+  background-color: #ffde59;
+}
+
+.tour-box::-webkit-scrollbar-thumb {
+  background-color: #ff914d;
+  border-radius: 5px;
+}
+
+.tour-box::-webkit-scrollbar-track {
+  background-color: #000000;
+}
+
+/* One show */
+.tour-entry {
+  display: flex;
+  justify-content: space-between; /* info left, button right */
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid #444;
+}
+
+/* Info block */
+.tour-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Date styling */
+.tour-info .date {
+  font-weight: bold;
+  color: #aa2222;
+  font-size: 0.9rem;
+}
+
+/* Venue styling */
+.tour-info .location {
+  font-weight: bold;
+  color: #ffde59;
+  font-size: 1.2rem;
+}
+
+/* City styling */
+.city {
+  display: block;
+  font-size: 0.9rem;
+  color: #fff;
+  margin-top: 2px;
+}
+
+/* Event styling */
+.tour-info .event {
+  font-size: 0.85rem;
+  color: #ff914d;
+}
+
+/* Link button (a real link styled as a button) */
+.tour-btn {
+  display: inline-block;
+  flex-shrink: 0;
+  padding: 8px 16px;
+  background-color: #ffde59;
+  color: #000;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.3s, transform 0.2s ease;
+}
+
+.tour-btn:hover {
+  background-color: #e03e00;
+  transform: translateY(-2px);
+}
+
+.tour-btn:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Loading / empty / error messages inside a list */
+.tour-empty {
+  color: #ddd;
+  line-height: 1.6;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.tour-empty a {
+  color: #ffde59;
+  font-weight: bold;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  /* Let the page scroll normally instead of scrolling inside the box */
+  .tour-box {
+    max-height: none;
+    overflow-y: visible;
+    padding: 14px;
+    margin-bottom: 30px;
+  }
+
+  .section-header {
+    width: 90%;
+  }
+}
+
+@media (max-width: 520px) {
+  /* Stack: show details on top, button underneath at full width */
+  .tour-entry {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .tour-btn {
+    display: block;
+    padding: 12px 16px;
+    white-space: normal;
+  }
+}

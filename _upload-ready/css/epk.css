@@ -1,0 +1,209 @@
+/* ==========================================================
+   EPK / press kit page only. Card layout comes from site.css.
+   ========================================================== */
+
+.epk-header {
+  text-align: center;
+}
+
+.epk-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ff914d !important;
+  margin-bottom: 6px !important;
+}
+
+.epk-header h1 {
+  font-size: 2.6rem;
+  margin-bottom: 8px;
+}
+
+.epk-tagline {
+  font-size: 1.1rem;
+  margin-bottom: 0 !important;
+}
+
+/* Quick facts: label | value */
+.facts > div {
+  display: flex;
+  gap: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid #444;
+}
+
+.facts > div:last-child {
+  border-bottom: none;
+}
+
+.facts dt {
+  flex: 0 0 110px;
+  font-weight: bold;
+  color: #ff914d;
+}
+
+.facts dd {
+  color: #ddd;
+  line-height: 1.5;
+}
+
+/* Lineup */
+.lineup {
+  list-style: none;
+}
+
+.lineup li {
+  padding: 8px 0;
+  border-bottom: 1px solid #444;
+  color: #ddd;
+}
+
+.lineup li:last-child {
+  border-bottom: none;
+}
+
+.lineup strong {
+  color: #ffde59;
+  margin-right: 10px;
+}
+
+.lineup span {
+  color: #ff914d;
+}
+
+/* Selected performances */
+.highlights {
+  list-style: none;
+  margin-bottom: 1.2rem;
+}
+
+.highlights li {
+  padding: 9px 0;
+  border-bottom: 1px solid #444;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+.highlights li:last-child {
+  border-bottom: none;
+}
+
+.highlights .when {
+  display: inline-block;
+  min-width: 120px;
+  margin-right: 8px;
+  font-weight: bold;
+  color: #aa2222;
+}
+
+/* Press + contact link lists */
+.press-list {
+  list-style: none;
+}
+
+.press-list li {
+  padding: 6px 0;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+/* Video embed: scales to the card width, always 16:9 */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-links {
+  line-height: 1.9 !important;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .epk-header h1 {
+    font-size: 2rem;
+  }
+
+  .highlights .when {
+    display: block;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .facts > div {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .facts dt {
+    flex-basis: auto;
+  }
+
+}
+
+/* Printing / "Save as PDF": a clean black-on-white one-sheet */
+@media print {
+  .site-header {
+    display: none;
+  }
+
+  body.page,
+  body.page * {
+    color: #000 !important;
+    text-shadow: none !important;
+  }
+
+  body.page {
+    background: #fff;
+  }
+
+  body.page::before {
+    display: none;
+  }
+
+  .content-container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+
+  .content-box {
+    background: #fff;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 12px 0;
+    break-inside: avoid;
+  }
+
+  .content-box + .content-box {
+    margin-top: 0;
+    border-top: 1px solid #999;
+  }
+
+  .video-embed,
+  .gallery-item figcaption .dl {
+    display: none;
+  }
+
+  .press-gallery .gallery-item {
+    background: #fff;
+  }
+
+  .press-gallery img {
+    max-height: 140px;
+    object-fit: cover;
+  }
+}
