@@ -1,0 +1,13 @@
+# Files that stay on your computer and never go to GitHub
+TODO.md
+_to_delete/
+_archive/
+_upload-ready/
+
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.bak
+GITHUB-SETUP.md
