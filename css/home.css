@@ -106,3 +106,22 @@ body.home::after {
     padding: 13px 32px;
   }
 }
+
+/* Large logo at the top of the home page (there is no ribbon here) */
+.home-logo {
+  display: block;
+  width: min(80%, 340px);
+  height: auto;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .home-main {
+    padding-top: 24px;
+    gap: 22px;
+  }
+
+  .home-logo {
+    width: min(70%, 260px);
+  }
+}

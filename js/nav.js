@@ -55,6 +55,9 @@
       '</nav>' +
     '</header>';
 
+  // The home page has no ribbon: it shows its own large logo and big buttons instead.
+  if (document.body.classList.contains('home')) html = '';
+
   // Favicon (tab icon) + phone home-screen icon on every page that uses this header
   if (!document.querySelector('link[rel~="icon"]')) {
     [
