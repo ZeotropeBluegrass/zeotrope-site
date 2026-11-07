@@ -219,3 +219,41 @@ dialog.lightbox .lb-download[hidden] {
   font-size: 0.85em;
   opacity: 0.75;
 }
+
+/* Featured video at the top of the gallery: 16:9, scales to the page width */
+.gallery-video {
+  max-width: 800px;
+  margin: 0 auto 24px;
+}
+
+.gallery-video .video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #111;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gallery-video .video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.gallery-video .video-caption {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.gallery-video .video-caption a {
+  color: #ffde59;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.gallery-video .video-caption a:hover {
+  text-decoration: underline;
+}
