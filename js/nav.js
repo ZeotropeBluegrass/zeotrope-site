@@ -24,7 +24,7 @@
     { label: 'Tour', path: 'pages/tour.html' },
     { label: 'Bio',  path: 'pages/about.html' },
     { label: 'Gallery', path: 'pages/gallery.html' }
-    // Contact lives in the footer (see FOOTER below), not the menu.
+    // Contact info (booking email + social links) lives in the footer (see FOOTER below), not the menu.
     // EPK is intentionally unlisted. It lives at /epk/ (epk/index.html); share that URL directly.
     // { label: 'EPK', path: 'epk/index.html' },
     // { label: 'Media', path: 'pages/media.html' }
@@ -72,9 +72,14 @@
     footer.className = 'site-footer';
     footer.innerHTML =
       '<p class="footer-links">' +
-        '<a href="' + root + 'pages/contact.html">Contact</a>' +
-        '<span aria-hidden="true"> &middot; </span>' +
         '<a href="mailto:booking@zeotropebluegrass.com">booking@zeotropebluegrass.com</a>' +
+      '</p>' +
+      '<p class="footer-links">' +
+        '<a href="https://www.facebook.com/p/Zeotrope-61574275161086/" target="_blank" rel="noopener noreferrer">Facebook</a>' +
+        '<span aria-hidden="true"> &middot; </span>' +
+        '<a href="https://www.instagram.com/zeotropeband/" target="_blank" rel="noopener noreferrer">Instagram</a>' +
+        '<span aria-hidden="true"> &middot; </span>' +
+        '<a href="https://www.youtube.com/@ZeotropeBluegrass" target="_blank" rel="noopener noreferrer">YouTube</a>' +
       '</p>' +
       '<p class="footer-copy">&copy; ' + new Date().getFullYear() + ' Zeotrope</p>';
     document.body.appendChild(footer);

@@ -9,7 +9,7 @@ Plain HTML, CSS and JavaScript. There is no build step, so every file here is se
 | Path | What it is |
 |---|---|
 | `index.html` | Home page |
-| `pages/` | Tour, Bio, Gallery and Contact pages |
+| `pages/` | Tour, Bio and Gallery pages |
 | `epk/index.html` | Press kit. Unlisted: it is not in the menu, so send the `/epk/` link directly |
 | `css/` | `site.css` is shared; every other file is for one page |
 | `js/nav.js` | The shared header and menu. Edit it once to change every page |
